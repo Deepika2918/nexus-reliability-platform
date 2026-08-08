@@ -1,15 +1,40 @@
-# nexus-deepika
+# NEXUS — Local Reliability Platform
 
-Local working model of the NEXUS platform (Engineering Challenge NX-CH-001).
+A local working model of the NEXUS platform for Engineering Challenge NX-CH-001.
 
-> **Status:** Phase 1 — architecture and skeleton. Full run/use/break instructions will be completed before submission.
+NEXUS is a small reliability platform that accepts background work, persists it, dispatches it to workers, retries failed work with limits, handles duplicate delivery, records events, monitors worker health, and provides an operator dashboard.
 
-## Quick start (current)
+## Scope
+
+This implementation focuses on the core reliability requirements:
+
+- Persistent accepted work
+- Work delivery and completion
+- Retry with bounded attempts
+- Dead-letter / failed work visibility
+- Idempotent duplicate handling
+- Worker crash recovery
+- Worker health and restart limits
+- Event history for investigation
+- Local operator dashboard
+- Basic release and rollback workflow
+- Deliberate failure simulation
+
+The implementation is intentionally local and deterministic.
+
+## Requirements
+
+- Python 3.11+ recommended
+- Windows PowerShell or a Unix-like shell
+- No cloud services
+- No API keys
+- No internet connection is required at runtime
+
+## Start
+
+From the repository root:
+
+### Windows PowerShell
 
 ```powershell
 .\start.ps1
-```
-
-Then open http://127.0.0.1:8000/ for the operator dashboard stub, or http://127.0.0.1:8000/health for liveness.
-
-See [ARCHITECTURE.md](ARCHITECTURE.md) for design and build plan.
