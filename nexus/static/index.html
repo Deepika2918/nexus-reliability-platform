@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS Operator Dashboard</title>
+  <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+  <header>
+    <div class="header-row">
+      <div>
+        <h1>NEXUS Operator Dashboard</h1>
+        <p id="health-detail" class="muted">Loading platform state…</p>
+      </div>
+      <div id="health-badge" class="badge badge-ok">OK</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Summary</h2>
+      <div id="metrics" class="metrics"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Work Items</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Work ID</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Attempts</th>
+              <th>Worker</th>
+              <th>Created</th>
+              <th>Lease Expires</th>
+              <th>Failure Reason</th>
+            </tr>
+          </thead>
+          <tbody id="work-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Workers</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Worker ID</th>
+              <th>Status</th>
+              <th>Current Work</th>
+              <th>Last Heartbeat</th>
+              <th>Last Activity</th>
+              <th>Lease Expires</th>
+              <th>Failure Mode</th>
+            </tr>
+          </thead>
+          <tbody id="worker-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Event History</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Type</th>
+              <th>Action</th>
+              <th>Work ID</th>
+              <th>Worker ID</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody id="event-table"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="last-updated" class="muted">Read-only view · auto-refresh every 3s</span>
+  </footer>
+
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>
